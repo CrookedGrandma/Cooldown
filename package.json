@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/CrookedGrandma/Cooldown#readme",
   "dependencies": {
+    "typed-rest-client": "^2.0.2"
   },
   "devDependencies": {
     "typescript": "^5.5.3"
