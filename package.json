@@ -4,7 +4,8 @@
   "description": "Simple application that periodically checks whether the outside temperature is lower than a specified temperature",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "start": "npx ts-node src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
     "typed-rest-client": "^2.0.2"
   },
   "devDependencies": {
+    "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
   }
 }

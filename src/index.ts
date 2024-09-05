@@ -73,4 +73,4 @@ async function alertOnLowTemp() {
     below = temp <= thresholdTemp;
 }
 
-setInterval(alertOnLowTemp, intervalMinutes * 60000);
+alertOnLowTemp().then(() => setInterval(alertOnLowTemp, intervalMinutes * 60000));
