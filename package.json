@@ -1,0 +1,24 @@
+{
+  "name": "cooldown",
+  "version": "0.0.1",
+  "description": "Simple application that periodically checks whether the outside temperature is lower than a specified temperature",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrookedGrandma/Cooldown.git"
+  },
+  "author": "CrookedGrandma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CrookedGrandma/Cooldown/issues"
+  },
+  "homepage": "https://github.com/CrookedGrandma/Cooldown#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  }
+}
