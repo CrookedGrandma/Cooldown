@@ -50,15 +50,20 @@ async function getCurrentTemp() {
     return res.result.current.temperature_2m;
 }
 
-async function alertOnLowTemp() {
-    let temp: number;
+async function getCurrentTempSafe(): Promise<number | undefined> {
     try {
-        temp = await getCurrentTemp();
+        return await getCurrentTemp();
     }
     catch (e) {
         console.error(e);
-        return;
     }
+}
+
+async function alertOnLowTemp() {
+    const temp = await getCurrentTempSafe();
+    if (!temp)
+        return;
+
     const prefix = `${new Date().toLocaleTimeString()} - ${temp}°C - `;
     if (temp > thresholdTemp) {
         if (below)
