@@ -1,4 +1,5 @@
 import * as rm from 'typed-rest-client/RestClient';
+import {processKeyPressEvents} from "./keypressevents";
 
 const latitude: number = /* TODO: FILL */;
 const longitude: number = /* TODO: FILL */;
@@ -59,7 +60,7 @@ async function getCurrentTempSafe(): Promise<number | undefined> {
     }
 }
 
-async function alertOnLowTemp() {
+export async function alertOnLowTemp() {
     const temp = await getCurrentTempSafe();
     if (!temp)
         return;
@@ -81,8 +82,9 @@ async function alertOnLowTemp() {
 
 console.log(`Latitude: ${latitude}`);
 console.log(`Longitude: ${longitude}`);
-console.log(`Temperatur threshold: ${thresholdTemp}°C`);
+console.log(`Temperature threshold: ${thresholdTemp}°C`);
 console.log(`Checking each ${intervalMinutes} minutes`);
 console.log();
 
 alertOnLowTemp().then(() => setInterval(alertOnLowTemp, intervalMinutes * 60000));
+processKeyPressEvents();
