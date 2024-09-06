@@ -59,16 +59,17 @@ async function alertOnLowTemp() {
         console.error(e);
         return;
     }
+    const prefix = `${new Date().toLocaleTimeString()} - ${temp}°C - `;
     if (temp > thresholdTemp) {
         if (below)
-            console.log(`!!! TEMPERATURE NOW ABOVE ${thresholdTemp}°C !!!`);
+            console.log(`${prefix}!!! TEMPERATURE NOW ABOVE ${thresholdTemp}°C !!!`);
         else
-            console.log("No change.");
+            console.log(`${prefix}No change.`);
     }
     else if (!below)
-        console.log(`!!! TEMPERATURE NOW BELOW ${thresholdTemp}°C !!!`);
+        console.log(`${prefix}!!! TEMPERATURE NOW BELOW ${thresholdTemp}°C !!!`);
     else
-        console.log("No change.");
+        console.log(`${prefix}No change.`);
 
     below = temp <= thresholdTemp;
 }
