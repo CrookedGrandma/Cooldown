@@ -74,4 +74,10 @@ async function alertOnLowTemp() {
     below = temp <= thresholdTemp;
 }
 
+console.log(`Latitude: ${latitude}`);
+console.log(`Longitude: ${longitude}`);
+console.log(`Temperatur threshold: ${thresholdTemp}°C`);
+console.log(`Checking each ${intervalMinutes} minutes`);
+console.log();
+
 alertOnLowTemp().then(() => setInterval(alertOnLowTemp, intervalMinutes * 60000));
